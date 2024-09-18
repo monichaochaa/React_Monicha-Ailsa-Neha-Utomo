@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm() {
+            // Validasi Product Name
+            const productName = document.getElementById("productName").value;
+            if (productName.length < 6 || productName.length > 50) {
+                alert("Product Name harus memiliki minimal 6 huruf dan maksimal 50 huruf.");
+                return false;
+            }
+
+            // Validasi Product Price
+            const productPrice = document.getElementById("productPrice").value;
+            if (isNaN(productPrice) || productPrice <= 0) {
+                alert("Product Price harus berupa angka yang valid.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1> Create Product </h1>
+   
+    <h2> Detail Product </h2>
+   
+    <form onsubmit="return validateForm()">
+        <label for="productName">Product name: </label><br>
+        <input type="text" id="productName" name="productName" required><br><br>
+        
+        <label for="productCategory">Product Category: </label><br>
+        <select id="productCategory" name="productCategory" required>
+            <option value="" disabled selected></option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="clothing">Clothing</option>
+        </select><br><br>
+       
+        <label for="productFreshness">Product Freshness: </label><br>
+        <input type="radio" id="BrandNew" name="productFreshness" value="BrandNew" required>
+        <label for="BrandNew">Brand New</label><br>
+
+        <input type="radio" id="SecondHank" name="productFreshness" value="SecondHank" required>
+        <label for="SecondHank">Second Hank</label><br>
+
+        <input type="radio" id="Refurbished" name="productFreshness" value="Refurbished" required>
+        <label for="Refurbished">Refurbished</label><br><br>
+
+        <label for="image">Image of Product: </label>
+        <input type="file" id="image" name="image" required><br><br>
+
+        <label for="description">Additional Description: </label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+        <label for="productPrice">Product price: </label><br>
+        <input type="text" id="productPrice" name="productPrice" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
