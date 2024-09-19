@@ -18,14 +18,14 @@
 }
 
 .navbar ul li {
- margin: 0 15px;
+  margin: 0 15px;
 }
 
 .navbar ul li a {
-  width: auto; 
+  width: auto;
   height: 43px;
   display: flex;
-  align-items: center; 
+  align-items: center;
   padding: 0 8px;
   text-decoration: none;
   color: #0D6EFD;
@@ -36,21 +36,216 @@
 }
 
 .navbar ul li.active a {
-  background-color: #0D6EFD; 
-  color:#FFFFFF;
-  ; 
+  background-color: #0D6EFD;
+  color: #FFFFFF;
 }
 
 .navbar ul li a:hover {
-  background-color: #0D6EFD; 
-    color:#FFFFFF; 
+  background-color: #0D6EFD;
+  color: #FFFFFF;
 }
 
 .hero-section {
   background-color: #37517E;
   color: #FFFFFF;
-  font-family: 'Jost', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.hero-content {
+  width: 1440px;
+  height: 760px;
+  position: relative;
+  flex-direction: column; 
+}
+
+.hero-content h1 {
+  width: 561.42px;
+  height: 125px;
+  position: absolute;
+  top: 114.2px;
+  left: 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: left;
+}
+
+.hero-content p {
+  width: 594.64px;
+  height: 63.8px;
+  position: absolute;
+  top: 239.2px;
+  left: 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+  text-align: left;
+  color: #FFFFFF99;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+}
+
+.btn-get-started, .btn-watch-video {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 147.36px;
+  height: 45px;
+  padding: 9px 28.36px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.btn-get-started {
+  background-color: #47B2E4;
+}
+
+.btn-watch-video {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.newsletter {
+  text-align: center;
+  padding: 50px 426px;
+  background-color: #F3F5FA;
+}
+
+.newsletter h2 {
+  font-size: 24px;
+  font-family: 'Jost', sans-serif;
+  font-weight: bold;
+  color: #37517E;
+}
+
+.newsletter p {
+  margin: 20px 0;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  color: #444444;
+}
+
+.newsletter-form {
+  margin-top: 20px;
+}
+
+.newsletter-form input {
+  padding: 6px 110px 6px 10px;
+  width: 636px;
+  height: 42.5px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.newsletter-form button {
+  padding: 9.25px 20.02px 9.25px 19px;
+  width: 113.02px;
+  height: 42.5px;
+  background-color: #47B2E4;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+footer {
+  color: #5E5E5E;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  background-color: #FFFFFF;
+  padding: 60px 80px 30px 80px;
+  width: 1442px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  width: 330px;
+  height: auto; /* Ubah height jika konten tidak terlihat */
+}
+
+.footer-column h3 {
+  font-size: 28px;
+  color: #37517E;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  margin-bottom: 16px; /* Tambahkan margin bawah jika diperlukan */
+}
+
+.footer-column p {
+  font-size: 14px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 16px; /* Tambahkan margin bawah jika diperlukan */
+}
+
+.footer-column h4 {
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+  text-align: left;
+  margin-bottom: 16px; 
+  color: #37517E;
+}
+
+.footer-column ul {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px; /* Tambahkan margin bawah untuk item di dalam ul */
+}
+
+.footer-column ul li a {
+  color:#777777; 
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline; 
+}
+
+.footer-bottom {
+  width: 1442px;
+  height: 81px;
+  padding: 0 0 0 12px;
+  background: #37517E;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bottom p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  color: #FFFFFF;
 }
