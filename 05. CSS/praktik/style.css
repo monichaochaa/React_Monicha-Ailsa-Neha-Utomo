@@ -46,26 +46,49 @@
 }
 
 .hero-section {
+  width: 1440px;
+  height: 760px;
+  margin-top: 60px;
   background-color: #37517E;
   color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column-reverse;
+  width: 1275px;
+  height: 526px;
+  margin: 60;
+}
+
+.text-and-image-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.hero-content {
-  width: 1440px;
-  height: 760px;
-  position: relative;
-  flex-direction: column; 
+.text-content {
+  width: 50%;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.hero-image img { 
+  width: 636px;
+  height: 527px;
+  margin-top: 8px;
 }
 
 .hero-content h1 {
-  width: 561.42px;
-  height: 125px;
-  position: absolute;
-  top: 114.2px;
-  left: 12px;
   font-family: 'Jost', sans-serif;
   font-size: 48px;
   font-weight: 700;
@@ -74,22 +97,19 @@
 }
 
 .hero-content p {
-  width: 594.64px;
-  height: 63.8px;
-  position: absolute;
-  top: 239.2px;
-  left: 12px;
   font-family: 'Jost', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 28.8px;
   text-align: left;
   color: #FFFFFF99;
+  margin-top: 20px;
 }
 
 .buttons {
   margin-top: 20px;
   display: flex;
+  gap: 10px;
 }
 
 .btn-get-started, .btn-watch-video {
@@ -102,7 +122,6 @@
   border-radius: 50px;
   text-decoration: none;
   color: white;
-  margin-right: 10px;
   font-size: 16px;
 }
 
@@ -114,6 +133,7 @@
   background-color: transparent;
   border: 2px solid white;
 }
+
 
 .newsletter {
   text-align: center;
@@ -235,7 +255,6 @@ footer {
   height: 81px;
   padding: 0 0 0 12px;
   background: #37517E;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
