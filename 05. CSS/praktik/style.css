@@ -179,6 +179,12 @@
   margin-right: 10px;
 }
 
+.newsletter-form input:hover {
+  border-color: #47B2E4;
+  box-shadow: 0 0 10px rgba(71, 178, 228, 0.7);
+  transition: 0.3s ease;
+}
+
 .newsletter-form button {
   padding: 9.25px 20.02px 9.25px 19px;
   width: 113.02px;
