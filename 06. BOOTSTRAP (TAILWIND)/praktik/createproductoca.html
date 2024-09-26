@@ -43,7 +43,7 @@
             </nav>
         </header>
 
-        <!-- Create Product Section -->
+        <!-- Create Product Section menggunakan Tailwind CSS Grid -->
         <section class="flex flex-col items-center mt-6">
             <!-- Bagian Form Create Product -->
             <div class="w-[936px] bg-white shadow-lg rounded-lg p-8 mb-8">
@@ -53,49 +53,52 @@
                     <h2 class="text-2xl font-semibold mt-4">Create Product</h2>
                     <p class="font-roboto text-[20px] text-[#212529] mt-2">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
                 </div>
-          
-                <!-- Form -->
-                <form class="space-y-6 w-[656px] h-[936px] mx-[100px]">
-                    <div> 
-                        <label for="detailProduct" class="font-roboto text-[23px] font-medium leading-[28.8px] text-left text-[#212529]"> Detail Product </label> 
-                    </div>
-                    <!-- Product Name -->
-                    <div>
-                        <label for="productName" class="block text-sm font-medium text-gray-700">Product Name</label>
-                        <input type="text" id="productName" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
+              
+                <!-- Form dengan Tailwind CSS Grid -->
+                <form class="space-y-6" id="productForm">
+                    <!-- Menggunakan Grid Tailwind CSS << ini grid system Tailwind -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Product Name -->
+                        <div>
+                            <label for="productName" class="block text-sm font-medium text-gray-700">Product Name</label>
+                            <input type="text" id="productName" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                            <p class="text-red-500 hidden mt-1 text-sm" id="nameError">Product name is required</p> <!-- << ini validasi -->
+                        </div>
 
-                    <!-- Product Category -->
-                    <div>
-                        <label for="category" class="block text-sm font-medium text-gray-700">Product Category</label>
-                        <select id="category" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <option>Choose...</option>
-                            <option>Category 1</option>
-                            <option>Category 2</option>
-                            <option>Category 3</option>
-                        </select>
-                    </div>
+                        <!-- Product Category -->
+                        <div>
+                            <label for="category" class="block text-sm font-medium text-gray-700">Product Category</label>
+                            <select id="category" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                                <option value="">Choose...</option>
+                                <option value="Category 1">Category 1</option>
+                                <option value="Category 2">Category 2</option>
+                                <option value="Category 3">Category 3</option>
+                            </select>
+                            <p class="text-red-500 hidden mt-1 text-sm" id="categoryError">Please select a category</p> <!-- << ini validasi -->
+                        </div>
+                    </div> <!-- << ini grid system Tailwind -->
 
                     <!-- Image of Product -->
                     <div>
                         <label for="image" class="block text-sm font-medium text-gray-700">Image of Product</label>
-                        <input type="file" id="image" class="mt-1 block w-full text-sm text-gray-500 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <input type="file" id="image" class="mt-1 block w-full text-sm text-gray-500 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        <p class="text-red-500 hidden mt-1 text-sm" id="imageError">Please upload a product image</p> <!-- << ini validasi -->
                     </div>
 
                     <!-- Product Freshness -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Product Freshness</label>
-                        <div class="mt-2 space-y-2">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2"> <!-- << ini grid system Tailwind -->
                             <div class="flex items-center">
-                                <input id="brand-new" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" checked>
+                                <input id="brand-new" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" value="Brand New" checked>
                                 <label for="brand-new" class="ml-3 block text-sm font-medium text-gray-700">Brand New</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="second-hand" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                <input id="second-hand" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" value="Second Hand">
                                 <label for="second-hand" class="ml-3 block text-sm font-medium text-gray-700">Second Hand</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="refurbished" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                <input id="refurbished" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" value="Refurbished">
                                 <label for="refurbished" class="ml-3 block text-sm font-medium text-gray-700">Refurbished</label>
                             </div>
                         </div>
@@ -110,7 +113,8 @@
                     <!-- Product Price -->
                     <div>
                         <label for="price" class="block text-sm font-medium text-gray-700">Product Price</label>
-                        <input type="number" id="price" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="$">
+                        <input type="number" id="price" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="$" required>
+                        <p class="text-red-500 hidden mt-1 text-sm" id="priceError">Please enter a price</p> <!-- << ini validasi -->
                     </div>
 
                     <!-- Submit Button -->
@@ -119,5 +123,60 @@
                     </div>
                 </form>
             </div>
+        </section>
+    </div>
+
+    <script>
+        // Validasi form saat submit << ini validasi
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Validasi Product Name
+            const productName = document.getElementById('productName');
+            const nameError = document.getElementById('nameError');
+            if (productName.value === '') {
+                nameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+            }
+
+            // Validasi Product Category
+            const category = document.getElementById('category');
+            const categoryError = document.getElementById('categoryError');
+            if (category.value === '') {
+                categoryError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                categoryError.classList.add('hidden');
+            }
+
+            // Validasi Image
+            const image = document.getElementById('image');
+            const imageError = document.getElementById('imageError');
+            if (image.files.length === 0) {
+                imageError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                imageError.classList.add('hidden');
+            }
+
+            // Validasi Price
+            const price = document.getElementById('price');
+            const priceError = document.getElementById('priceError');
+            if (price.value === '' || price.value <= 0) {
+                priceError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                priceError.classList.add('hidden');
+            }
+
+            // Jika semua valid, submit form
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -7,31 +7,57 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav class="bg-white w-[1440px] flex items-center h-[60px] py-[8.5px] px-[16px] lg:px-[34px] shadow-[0_1px_8px_0_rgba(0,0,0,0.2)]">
-        <h2 class="text-lg font-medium text-[#37517E]">Simple Header</h2>
-        <ul class="flex items-center gap-[16px] ml-auto">
-            <li class="active"><a href="#" class="text-[#0D6EFD] font-semibold hover:bg-[#0D6EFD] hover:text-white px-3 py-2 rounded">Home</a></li>
-            <li><a href="#" class="text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white px-3 py-2 rounded">Features</a></li>
-            <li><a href="#" class="text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white px-3 py-2 rounded">Pricing</a></li>
-            <li><a href="#" class="text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white px-3 py-2 rounded">FAQs</a></li>
-            <li><a href="#" class="text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white px-3 py-2 rounded">About</a></li>
-        </ul>
-    </nav>
-    <section class="w-[1440px] h-[760px] bg-[#37517E] text-white flex justify-center items-center py-[120px]">
-        <div class="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0"></div>>
-          
-                <div class="lg:w-1/2">
-                    <h1 class="text-4xl font-bold leading-tight">Better Solution For Your Business</h1>
-                    <p class="mt-5 text-white opacity-60"></pclass>We are team of talented designers making websites with Bootstrap</p>
-                    <div class="mt-5 flex space-x-4">
-                        <a href="#" class="bg-[#47B2E4] text-white py-2.5 px-7 rounded-full">Get Started</a>
-                        <a href="#" class="border border-white text-white py-2.5 px-7 rounded-full">Watch Video</a>
-                    </div>
-                </div>
-                <div class="w-[1440px] lg:w-1/2 flex justify-center">
-                    <img src="landingpagepoto.png" alt="Business Illustration" class="w-[636px] h-[527px] mt-2">
+       <!-- Title -->
+       <h2 class="font-['Roboto'] text-[#212529] text-[24px] font-medium leading-[28.13px] tracking-[-0.32px] m-0">
+        Simple Header
+    </h2>
+
+    <!-- Navigation Menu -->
+    <ul class="flex list-none gap-[16px]">
+        <!-- Home - Active -->
+        <li class="active">
+            <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> Home </a></li>
+        <!-- Features -->
+        <li>
+            <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> Features </a></li>
+        <!-- Pricing -->
+        <li>
+            <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> Pricing </a></li>
+        <!-- FAQs -->
+        <li>
+            <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> FAQs </a></li>
+        <!-- About -->
+        <li>
+            <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> About </a></li>
+    </ul>
+</nav>
+    
+    <section class="w-[1440px] h-[760px] bg-[#37517E] text-white flex justify-center items-center py-[50px]">
+        <div class="flex flex-col-reverse lg:flex-row items-stretch w-[1275px] h-[526px]">
+            
+            <!-- Text Content -->
+            <div class="w-1/2 flex flex-col justify-center">
+                <h1 class="font-bold text-left text-[48px] leading-[56px]">Better Solution For Your Business</h1>
+                <p class="mt-5 text-left text-[24px] font-medium leading-[28.8px] text-[#FFFFFF99]">
+                    We are team of talented designers making websites with Bootstrap
+                </p>
+                
+                <!-- Buttons -->
+                <div class="mt-5 flex gap-4">
+                    <a href="#" class="btn-get-started bg-[#47B2E4] py-[9px] px-[28.36px] rounded-full text-white text-[16px] inline-flex items-center justify-center w-[147.36px] h-[45px]">
+                        Get Started
+                    </a>
+                    <a href="#" class="btn-watch-video border-2 border-white py-[9px] px-[28.36px] rounded-full text-white text-[16px] inline-flex items-center justify-center h-[45px]">
+                        Watch Video
+                    </a>
                 </div>
             </div>
+    
+            <!-- Image -->
+            <div class="w-1/2 flex justify-center">
+                <img src="landingpagepoto.png" alt="Business Illustration" class="w-[636px] h-[527px] mt-[8px]">
+            </div>
+    
         </div>
     </section>
     
