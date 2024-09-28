@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        /* Gaya sederhana untuk memperindah tampilan */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #quote {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 50%;
+            background-color: #f9f9f9;
+            font-size: 1.5em;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #0D6EFD;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quote">Tekan tombol untuk menghasilkan kutipan acak.</div>
+
+    <button onclick="displayQuote()">Generate Quote</button>
+
+    <script>
+        // Array kutipan
+        const quotes = [
+            'Batasan satu-satunya untuk esok adalah keraguan kita hari ini.',
+            'Tujuan hidup kita adalah untuk bahagia.',
+            'Hidup adalah apa yang terjadi saat kita sibuk membuat rencana lain.',
+            'Kesuksesan adalah hasil dari kerja keras dan ketekunan.',
+            'Hidup bukan tentang menunggu badai berlalu, tapi tentang belajar menari di tengah hujan.'
+        ];
+
+        // Fungsi untuk menghasilkan kutipan acak
+        function displayQuote() {
+            // Mendapatkan elemen div dengan id 'quote'
+            const quoteDiv = document.getElementById('quote');
+            
+            // Menghasilkan indeks acak berdasarkan panjang array quotes
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+
+            // Mengambil kutipan acak dari array
+            const randomQuote = quotes[randomIndex];
+
+            // Menampilkan kutipan di dalam div
+            quoteDiv.innerHTML = randomQuote;
+        }
+    </script>
+
+</body>
+</html>

@@ -17,4 +17,54 @@ const reverseFirstTwo = ([a, b]) => {
     return [b, a];
 }
 
-console.log(reverseFirstTwo(['oca', 'rere', 'jemi'])); 
+//console.log(reverseFirstTwo(['oca', 'rere', 'jemi'])); 
+
+function findLargest (arr) {
+    let largest = arr[0];
+    
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest;
+}
+
+//console.log(findLargest([3,2,9,6,4]));
+
+const calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+    subtract: function(a, b) {
+        return a - b;
+    },
+    multiply: function(a, b) {
+        return a * b;
+    },
+    divide: function(a, b) {
+        if (b !== 0) {
+            return a / b;
+        } else {
+            return 'Error: Division by zero';
+        }
+    }
+};
+//console.log(calculator.add(10,5));
+//console.log(calculator.subtract(10, 5));
+//console.log(calculator.multiply(10, 5));
+//console.log(calculator.divide(10, 5));
+//console.log(calculator.divide(10, 0));
+
+function greetUser(name) {
+    return "Hello, " + name + "!";
+}
+
+console.log(greetUser("Oca")); 
+
+const greetUserArrow = (name) => "Hello, " + name + "!";
+
+console.log(greetUserArrow("Rere")); 
+
+
+
