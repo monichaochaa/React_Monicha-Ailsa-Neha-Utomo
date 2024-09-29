@@ -51,28 +51,34 @@
                 <div class="flex flex-col items-center text-center mb-8 mx-auto">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" class="w-12 mx-auto" alt="Bootstrap Logo">
                     <h2 class="text-2xl font-semibold mt-4">Create Product</h2>
-                    <p class="font-roboto text-[20px] text-[#212529] mt-2">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+                    <p class="font-roboto text-[20px] text-[#212529] mt-2">Below is an example form built entirely with Bootstrap’s form controls.</p>
+                </div>
+
+                <!-- Alert for Validation Error -->
+                <div id="alert" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span class="block sm:inline">Please fill out all fields correctly.</span>
                 </div>
           
                 <!-- Form -->
-                <form class="space-y-6 w-[656px] h-[936px] mx-[100px]">
+                <form id="productForm" class="space-y-6 w-[656px] h-[936px] mx-[100px]">
                     <div> 
                         <label for="detailProduct" class="font-roboto text-[23px] font-medium leading-[28.8px] text-left text-[#212529]"> Detail Product </label> 
                     </div>
                     <!-- Product Name -->
                     <div>
                         <label for="productName" class="block text-sm font-medium text-gray-700">Product Name</label>
-                        <input type="text" id="productName" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="text" id="productName" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter product name">
                     </div>
 
                     <!-- Product Category -->
                     <div>
                         <label for="category" class="block text-sm font-medium text-gray-700">Product Category</label>
                         <select id="category" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <option>Choose...</option>
-                            <option>Category 1</option>
-                            <option>Category 2</option>
-                            <option>Category 3</option>
+                            <option value="">Choose...</option>
+                            <option value="category1">Category 1</option>
+                            <option value="category2">Category 2</option>
+                            <option value="category3">Category 3</option>
                         </select>
                     </div>
 
@@ -80,31 +86,6 @@
                     <div>
                         <label for="image" class="block text-sm font-medium text-gray-700">Image of Product</label>
                         <input type="file" id="image" class="mt-1 block w-full text-sm text-gray-500 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-
-                    <!-- Product Freshness -->
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Product Freshness</label>
-                        <div class="mt-2 space-y-2">
-                            <div class="flex items-center">
-                                <input id="brand-new" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" checked>
-                                <label for="brand-new" class="ml-3 block text-sm font-medium text-gray-700">Brand New</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input id="second-hand" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
-                                <label for="second-hand" class="ml-3 block text-sm font-medium text-gray-700">Second Hand</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input id="refurbished" name="freshness" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
-                                <label for="refurbished" class="ml-3 block text-sm font-medium text-gray-700">Refurbished</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional Description -->
-                    <div>
-                        <label for="description" class="block text-sm font-medium text-gray-700">Additional Description</label>
-                        <textarea id="description" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
                     </div>
 
                     <!-- Product Price -->
@@ -119,5 +100,48 @@
                     </div>
                 </form>
             </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="myModal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+            <!-- Modal Content -->
+            <div class="bg-white p-6 rounded-lg w-[400px]">
+                <h2 class="text-lg font-semibold mb-4">Form Submitted</h2>
+                <p class="text-gray-700">Your product has been successfully submitted.</p>
+                <button id="closeModal" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Handle Modal
+      const modal = document.getElementById("myModal");
+      const closeModal = document.getElementById("closeModal");
+      const form = document.getElementById('productForm');
+      const alertBox = document.getElementById('alert');
+      const productName = document.getElementById('productName');
+      const category = document.getElementById('category');
+      const price = document.getElementById('price');
+
+      form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Hide alert initially
+        alertBox.classList.add('hidden');
+
+        // Validation
+        if (productName.value === '' || category.value === '' || price.value === '') {
+          alertBox.classList.remove('hidden'); // Show alert if validation fails
+        } else {
+          modal.classList.remove("hidden"); // Show modal if form is valid
+        }
+      });
+
+      closeModal.addEventListener("click", function() {
+        modal.classList.add("hidden"); // Hide modal when "Close" is clicked
+      });
+    </script>
 </body>
 </html>
