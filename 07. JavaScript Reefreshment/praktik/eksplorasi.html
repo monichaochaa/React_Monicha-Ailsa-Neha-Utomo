@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote</title>
+</head>
+<body>
+
+    <div id="quote" style="font-size: 20px; margin-bottom: 20px;"></div>
+
+    <button onclick="getQuote()">Generate Quote</button>
+
+    <script>
+
+        async function getQuote() {
+            document.getElementById("quote").innerText = "Mengambil kutipan...";
+
+            const quotes = await new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve ([
+                    'Batasan satu-satunya untuk esok adalah keraguan kita hari ini.',
+                    'Tujuan hidup kita adalah untuk bahagia.',
+                    'Hidup adalah apa yang terjadi saat kita sibuk membuat rencana lain.'
+                    ]);
+                }, 2000);
+            });
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+
+            console.log("Kutipan yang dipilih:", randomQuote);
+            document.getElementById("quote").innerText = randomQuote;
+        }
+      
+    </script>
+</body>
+</html>
