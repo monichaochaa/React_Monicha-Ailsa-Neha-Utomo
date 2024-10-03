@@ -47,7 +47,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Data akan muncul di sini -->
+               
             </tbody>
         </table>
 
@@ -66,15 +66,15 @@
 
         // Fungsi untuk render tabel produk
         function renderTable() {
-            productTable.innerHTML = '';  // Bersihkan isi tabel
+            productTable.innerHTML = '';  
             productData.forEach((product, index) => {
                 const row = productTable.insertRow();
                 row.insertCell(0).innerText = index + 1;
                 row.insertCell(1).innerText = product.name;
                 row.insertCell(2).innerText = product.category;
-                row.insertCell(3).innerText = 'default image';  // Gambar produk default
+                row.insertCell(3).innerText = 'default image';  
                 row.insertCell(4).innerText = product.freshness;
-                row.insertCell(5).innerText = 'Additional Description';  // Bisa dikembangkan
+                row.insertCell(5).innerText = 'Additional Description'; 
                 row.insertCell(6).innerText = product.price;
             });
         }
@@ -94,23 +94,20 @@
                 freshness: productFreshness
             });
 
-            // Reset form setelah submit
             productForm.reset();
-            renderTable();  // Update tabel setelah produk ditambah
+            renderTable(); 
         });
 
-        // Fungsi untuk delete produk terakhir
         deleteButton.addEventListener('click', function() {
             if (productData.length > 0) {
-                productData.pop();  // Hapus produk terakhir
-                renderTable();  // Update tabel setelah produk dihapus
+                productData.pop();  
+                renderTable();  
                 alert('Last product has been deleted.');
             } else {
                 alert('No product to delete.');
             }
         });
 
-        // Fungsi untuk search produk
         searchButton.addEventListener('click', function() {
             const searchQuery = searchInput.value.toLowerCase();
             if (!searchQuery) {
@@ -118,7 +115,6 @@
                 return;
             }
 
-            // Coba cari produk di array berdasarkan nama yang dicari
             const result = productData.find(product => product.name.toLowerCase() === searchQuery);
             if (result) {
                 alert(`Product found:
