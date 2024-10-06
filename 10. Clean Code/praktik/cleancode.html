@@ -3,133 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Product</title>
+    <title>Create and List Product</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
-    <div class="container mx-auto">
-        <h2 class="text-2xl font-bold mb-5">Create Product</h2>
-        <form id="productForm" class="space-y-4 bg-white p-6 shadow-md rounded-md">
-            <div>
-                <label for="productName" class="block font-semibold mb-1">Product Name</label>
-                <input type="text" id="productName" class="w-full p-2 border border-gray-300 rounded" required>
-            </div>
-            <div>
-                <label for="productCategory" class="block font-semibold mb-1">Product Category</label>
-                <input type="text" id="productCategory" class="w-full p-2 border border-gray-300 rounded" required>
-            </div>
-            <div>
-                <label for="productPrice" class="block font-semibold mb-1">Product Price</label>
-                <input type="number" id="productPrice" class="w-full p-2 border border-gray-300 rounded" required>
-            </div>
-            <div>
-                <label for="productFreshness" class="block font-semibold mb-1">Product Freshness</label>
-                <select id="productFreshness" class="w-full p-2 border border-gray-300 rounded" required>
-                    <option value="Brand new">Brand new</option>
-                    <option value="Second Hand">Second Hand</option>
-                    <option value="Refurbished">Refurbished</option>
-                </select>
-            </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add Product</button>
-        </form>
+<body class="bg-gray-100 flex justify-center items-center">
+    <!-- Container Utama -->
+    <div class="w-full max-w-[1440px] bg-white shadow-lg">
 
-        <h2 class="text-2xl font-bold mt-10 mb-5">List Product</h2>
-        <table class="min-w-full bg-white shadow-md rounded-md">
-            <thead class="bg-gray-200">
-                <tr>
-                    <th class="p-3 text-left">No</th>
-                    <th class="p-3 text-left">Product Name</th>
-                    <th class="p-3 text-left">Product Category</th>
-                    <th class="p-3 text-left">Image of Product</th>
-                    <th class="p-3 text-left">Product Freshness</th>
-                    <th class="p-3 text-left">Additional Description</th>
-                    <th class="p-3 text-left">Product Price</th>
-                </tr>
-            </thead>
-            <tbody id="productTable" class="divide-y divide-gray-300">
-                <!-- Data akan muncul di sini -->
-            </tbody>
-        </table>
+        <!-- Header -->
+        <header class="bg-gray-200">
+            <nav class="bg-white w-full h-[60px] shadow-[0_1px_8px_0_rgba(0,0,0,0.2)] flex justify-between items-center px-[16px] lg:px-[34px] gap-[16px]">
+                <!-- Title -->
+                <h2 class="font-['Roboto'] text-[#212529] text-[24px] font-medium leading-[28.13px] tracking-[-0.32px] m-0">
+                    Simple Header
+                </h2>
+                <!-- Navigation Menu -->
+                <ul class="flex list-none gap-[16px]">
+                    <li class="active">
+                        <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> Home </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> Features </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> Pricing </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> FAQs </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-[8px] h-[43px] font-bold text-[#0D6EFD] hover:bg-[#0D6EFD] hover:text-white transition-colors duration-300"> About </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-        <div class="flex mt-5 space-x-2">
-            <input type="text" id="searchInput" class="w-full p-2 border border-gray-300 rounded" placeholder="Search by Product Name" />
-            <button id="searchButton" class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
-            <button id="deleteButton" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
-        </div>
+        <!-- Create Product Section -->
+        <section class="flex flex-col items-center mt-6">
+            <div class="w-full max-w-[936px] bg-white shadow-lg rounded-lg p-8 mb-8">
+                <div class="flex flex-col items-center text-center mb-8 mx-auto">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" class="w-12 mx-auto" alt="Bootstrap Logo">
+                    <h2 class="text-2xl font-semibold mt-4">Create Product</h2>
+                    <p class="font-roboto text-[20px] text-[#212529] mt-2">Below is an example form built entirely with Bootstrap’s form controls.</p>
+                </div>
+          
+                <!-- Form -->
+                <form id="productForm" class="space-y-6 w-full max-w-[656px] mx-auto">
+                    <div> 
+                        <label for="detailProduct" class="font-roboto text-[23px] font-medium leading-[28.8px] text-left text-[#212529]"> Detail Product </label> 
+                    </div>
+                    <!-- Product Name -->
+                    <div>
+                        <label for="productName" class="block text-sm font-medium text-gray-700">Product Name</label>
+                        <input type="text" id="productName" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <!-- Product Category -->
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-gray-700">Product Category</label>
+                        <select id="category" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option>Choose...</option>
+                            <option>Category 1</option>
+                            <option>Category 2</option>
+                            <option>Category 3</option>
+                        </select>
+                    </div>
+
+                    <!-- Image of Product -->
+                    <div>
+                        <label for="image" class="block text-sm font-medium text-gray-700">Image of Product</label>
+                        <input type="file" id="image" class="mt-1 block w-full text-sm text-gray-500 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <!-- Product Freshness -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Product Freshness</label>
+                        <div class="mt-2 space-y-2">
+                            <div class="flex items-center">
+                                <input id="brand-new" name="freshness" type="radio" value="Brand New" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300" checked>
+                                <label for="brand-new" class="ml-3 block text-sm font-medium text-gray-700">Brand New</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="second-hand" name="freshness" type="radio" value="Second Hand" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                <label for="second-hand" class="ml-3 block text-sm font-medium text-gray-700">Second Hand</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="refurbished" name="freshness" type="radio" value="Refurbished" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                <label for="refurbished" class="ml-3 block text-sm font-medium text-gray-700">Refurbished</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Description -->
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700">Additional Description</label>
+                        <textarea id="description" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+
+                    <!-- Product Price -->
+                    <div>
+                        <label for="price" class="block text-sm font-medium text-gray-700">Product Price</label>
+                        <input type="number" id="price" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="$">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- List Product Section -->
+        <section class="w-full max-w-[936px] mx-auto mt-8">
+            <h2 class="text-2xl font-bold mt-10 mb-5">List Product</h2>
+            <table class="min-w-full bg-white shadow-md rounded-md">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="p-3 text-left">No</th>
+                        <th class="p-3 text-left">Product Name</th>
+                        <th class="p-3 text-left">Product Category</th>
+                        <th class="p-3 text-left">Image of Product</th>
+                        <th class="p-3 text-left">Product Freshness</th>
+                        <th class="p-3 text-left">Additional Description</th>
+                        <th class="p-3 text-left">Product Price</th>
+                    </tr>
+                </thead>
+                <tbody id="productTable" class="divide-y divide-gray-300">
+                    <!-- Data akan muncul di sini -->
+                </tbody>
+            </table>
+
+            <div class="flex mt-5 space-x-2">
+                <input type="text" id="searchInput" class="w-full p-2 border border-gray-300 rounded" placeholder="Search by Product Name" />
+                <button id="searchButton" class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+                <button id="deleteButton" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+            </div>
+        </section>
     </div>
 
     <script>
-        let productList = []; //Simpan data produk
-        const productForm = document.getElementById('productForm');
-        const productTable = document.getElementById('productTable');
-        const searchButton = document.getElementById('searchButton');
-        const deleteButton = document.getElementById('deleteButton');
-        const searchInput = document.getElementById('searchInput');
+        // Array untuk menyimpan produk
+        const products = [];
 
-        function renderTable() {
-            productTable.innerHTML = '';  // Bersihkan isi tabel
-            productData.forEach((product, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
+        // Menangani pengiriman formulir
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir
+
+            // Mendapatkan nilai input
+            const productName = document.getElementById('productName').value;
+            const category = document.getElementById('category').value;
+            const image = document.getElementById('image').files[0] ? document.getElementById('image').files[0].name : 'No Image';
+            const freshness = document.querySelector('input[name="freshness"]:checked').value;
+            const description = document.getElementById('description').value;
+            const price = document.getElementById('price').value;
+
+            // Membuat objek produk
+            const product = {
+                productName,
+                category,
+                image,
+                freshness,
+                description,
+                price
+            };
+
+            // Menambahkan produk ke array
+            products.push(product);
+
+            // Menampilkan produk di tabel
+            displayProducts();
+
+            // Reset formulir
+            this.reset();
+        });
+
+        // Fungsi untuk menampilkan produk di tabel
+        function displayProducts() {
+            const productTable = document.getElementById('productTable');
+            productTable.innerHTML = ''; // Mengosongkan tabel sebelum menampilkan
+
+            products.forEach((product, index) => {
+                const row = `<tr>
                     <td class="p-3">${index + 1}</td>
-                    <td class="p-3">${product.name}</td>
+                    <td class="p-3">${product.productName}</td>
                     <td class="p-3">${product.category}</td>
-                    <td class="p-3">default image</td>
+                    <td class="p-3">${product.image}</td>
                     <td class="p-3">${product.freshness}</td>
-                    <td class="p-3">Additional Description</td>
+                    <td class="p-3">${product.description}</td>
                     <td class="p-3">${product.price}</td>
-                `;
-                productTable.appendChild(row);
+                </tr>`;
+                productTable.innerHTML += row;
             });
         }
 
-        productForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const productName = document.getElementById('productName').value;
-            const productCategory = document.getElementById('productCategory').value;
-            const productPrice = document.getElementById('productPrice').value;
-            const productFreshness = document.getElementById('productFreshness').value;
-
-            productData.push({
-                name: productName,
-                category: productCategory,
-                price: productPrice,
-                freshness: productFreshness
-            });
-
-            productForm.reset();
-            renderTable(); 
-        });
-
-        deleteButton.addEventListener('click', function() {
-            if (productData.length > 0) {
-                productData.pop();  // Hapus produk terakhir
-                renderTable();  // Update tabel setelah produk dihapus
-                alert('Last product has been deleted.');
+        // Fungsi untuk menghapus produk terakhir
+        document.getElementById('deleteButton').addEventListener('click', function() {
+            if (products.length > 0) {
+                products.pop(); // Menghapus produk terakhir
+                displayProducts(); // Memperbarui tampilan tabel
             } else {
-                alert('No product to delete.');
+                alert('No products to delete!');
             }
         });
 
-        searchButton.addEventListener('click', function() {
-            const searchQuery = searchInput.value.toLowerCase();
-            if (!searchQuery) {
-                alert('Please enter a product name to search.');
-                return;
-            }
-
-            const result = productData.find(product => product.name.toLowerCase() === searchQuery);
-            if (result) {
-                alert(`Product found:
-                Name: ${result.name}
-                Category: ${result.category}
-                Price: ${result.price}
-                Freshness: ${result.freshness}`);
+        // Fungsi untuk mencari produk berdasarkan nama
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const foundProduct = products.find(product => product.productName.toLowerCase() === searchInput);
+            if (foundProduct) {
+                alert(`Product Found:\nName: ${foundProduct.productName}\nCategory: ${foundProduct.category}\nImage: ${foundProduct.image}\nFreshness: ${foundProduct.freshness}\nDescription: ${foundProduct.description}\nPrice: ${foundProduct.price}`);
             } else {
-                alert('Product not found.');
+                alert('Product not found!');
             }
         });
-
     </script>
 </body>
 </html>
