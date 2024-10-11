@@ -1,13 +1,12 @@
-import React from "react";
-import CreateProduct from "./CreateProduct";
+import React from 'react';
+import CreateProductPage from './components/CreateProductPage';
 
-const App = () => {
-  return (
-    <div>
-      <h1> Welcome to the Create Product Page</h1>
-      <CreateProduct /> 
-    </div>
-  );
-};
+function App() {
+    return (
+        <div>
+            <CreateProductPage />
+        </div>
+    );
+}
 
 export default App;
