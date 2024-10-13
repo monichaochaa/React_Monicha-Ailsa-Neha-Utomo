@@ -10,4 +10,4 @@ export const article = {
     }
 };
 
-export default articleData;
+export default ArticleData;

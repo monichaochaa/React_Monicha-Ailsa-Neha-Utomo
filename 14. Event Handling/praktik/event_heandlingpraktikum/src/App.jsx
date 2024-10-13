@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CreateProduct from "./CreateProduct";
-import article from "./article/articleData";
+import article from "./article/ArticleData";
 
 console.log(article.title.id);
 console.log(article.description.en);
