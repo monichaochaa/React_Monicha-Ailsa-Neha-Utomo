@@ -1,11 +1,13 @@
 import React from 'react';
-import CreateProduct from './components/CreateProduct';
+import CreateProduct from './components/CreateProduct.jsx'; 
+import CreateProductPage from './components/CreateProductPage';
 
 const App = () => {
     return (
       <div className="bg-gray-100 min-h-screen flex justify-center items-center">
-        <CreateProduct />
-      </div>
+        <CreateProductPage />
+        </div>
+
     );
   };
   
