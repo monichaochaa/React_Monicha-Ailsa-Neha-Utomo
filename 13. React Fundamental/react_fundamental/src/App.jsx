@@ -1,12 +1,12 @@
 import React from 'react';
-import CreateProductPage from './components/CreateProductPage';
+import CreateProduct from './components/CreateProduct';
 
-function App() {
+const App = () => {
     return (
-        <div>
-            <CreateProductPage />
-        </div>
+      <div className="bg-gray-100 min-h-screen flex justify-center items-center">
+        <CreateProduct />
+      </div>
     );
-}
-
-export default App;
+  };
+  
+  export default App;

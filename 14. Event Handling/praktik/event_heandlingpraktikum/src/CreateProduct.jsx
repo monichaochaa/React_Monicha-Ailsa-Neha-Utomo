@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FormCreateProduct = () => {
+const CreateProduct = () => {
     const [productName, setProductName] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -65,4 +65,4 @@ const FormCreateProduct = () => {
     );
 };
 
-export default FormCreateProduct;
+export default CreateProduct;

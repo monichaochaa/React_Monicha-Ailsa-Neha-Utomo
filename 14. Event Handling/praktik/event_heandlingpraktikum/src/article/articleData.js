@@ -9,3 +9,5 @@ export const article = {
 
     }
 };
+
+export default article;
