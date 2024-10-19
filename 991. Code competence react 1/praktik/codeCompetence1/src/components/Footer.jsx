@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     return(
@@ -18,6 +18,11 @@ const Footer = () => {
             onClick={() => openLink('https://www.instagram.com/monich_aaa?igsh=MXMzcW8xbHdjemc0eg==')}
             className="hover:text-pink-500">
             <FontAwesomeIcon icon={faInstagram} size="2x" />
+          </button>
+          <button
+            onClick={() => openLink('https://x.com/Monichaocha00?t=veMZBC8HEzK8n49y7wvGKw&s=09')}
+            className="hover:text-white-500">
+            <FontAwesomeIcon icon={faXTwitter} size="2x" />
           </button>
         </div>
 
