@@ -4,7 +4,7 @@ import { faFacebook, faXTwitter, faInstagram } from '@fortawesome/free-brands-sv
 
 const Footer = () => {
     return(
-<Footer className="bg-gray-800 text-white py-8">
+<div className="bg-gray-800 text-white py-8">
     <div className="container mx-auto text-center">
         <h2 className="text-2xl font-bold mb-4"> ALL ABOUT OCA </h2> 
 
@@ -35,7 +35,7 @@ const Footer = () => {
             <p>&copy; {new Date().getFullYear()} Nama Website. All Rights Reserved.</p>
         </div>
     </div>
-</Footer>
+</div>
     );
 };
 
