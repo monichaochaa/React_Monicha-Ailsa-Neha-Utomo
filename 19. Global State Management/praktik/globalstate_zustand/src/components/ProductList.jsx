@@ -4,10 +4,13 @@ import useProductStore from "./ProductStore";
 
 const initialState = {
     products: [
-      { id: "1,001", name: 'Lorem', category: 'ipsum', price: 1, freshness: 'Brand New', description: 'adipisicing' },
-      { id: "1,002", name: 'Lorem', category: 'ipsum', price: 9, freshness: 'Second Hand', description: 'adipisicing' },
-      { id: "1,003", name: 'Lorem', category: 'ipsum', price: 20, freshness: 'Brand New', description: 'adipisicing' },
-      { id: "1,004", name: 'Lorem', category: 'ipsum', price: 9, freshness: 'Refused', description: 'adipisicing' },
+      { id: "e7ce2b97-d0c1-4a75-9c1d-e6dfc8441836", 
+        productName: "John", 
+        productCategory: "Doe", 
+        productFreshness: "Doe", 
+        productPrice: "Doe", 
+        image: "Doe", 
+        additionalDescription: "Doe", },
     ],
   };
   function productReducer(state, action) {
@@ -38,10 +41,11 @@ const ProductList = () => {
     const [state, dispatch] = useReducer(productReducer, initialState);
   const [newProduct, setNewProduct] = useState({
     id: '',
-    name: '',
-    category: '',
-    price: '',
-    freshness: '',
+    productName: '',
+    productCategory: '',
+    productPrice: '',
+    productFreshness: '',
+    image: ''
   });
   const [isEditing, setIsEditing] = useState(false);
   const handleChange = (e) => {
@@ -54,7 +58,7 @@ const ProductList = () => {
     } else {
       dispatch({ type: 'ADD_PRODUCT', payload: { ...newProduct, id: Date.now().toString() } });
     }
-    setNewProduct({ id: '', name: '', category: '', price: '', freshness: '' });
+    setNewProduct({ id: '', productName: '', productCategory: '', productPrice: '', productFreshness: '', image: ''  });
     setIsEditing(false);
   };
   const editProduct = (product) => {
@@ -67,10 +71,10 @@ const ProductList = () => {
 
  {/* Form for adding or editing product */}
  <form onSubmit={handleSubmit} className="mb-4">
-        <input type="text" name="name" value={newProduct.name} onChange={handleChange} placeholder="Product Name" className="border p-2 mb-2" />
-        <input type="text" name="category" value={newProduct.category} onChange={handleChange} placeholder="Category" className="border p-2 mb-2" />
-        <input type="text" name="price" value={newProduct.price} onChange={handleChange} placeholder="Price" className="border p-2 mb-2" />
-        <input type="text" name="freshness" value={newProduct.freshness} onChange={handleChange} placeholder="Freshness" className="border p-2 mb-2" />
+        <input type="text" name="productName" value={newProduct.productName} onChange={handleChange} placeholder="Product Name" className="border p-2 mb-2" />
+        <input type="text" name="productCategory" value={newProduct.productCategory} onChange={handleChange} placeholder="Product Category" className="border p-2 mb-2" />
+        <input type="text" name="productPrice" value={newProduct.productPrice} onChange={handleChange} placeholder="Product Price" className="border p-2 mb-2" />
+        <input type="text" name="productFreshness" value={newProduct.productFreshness} onChange={handleChange} placeholder="Product Freshness" className="border p-2 mb-2" />
         <button type="submit" className="bg-blue-500 text-white px-4 py-2">
           {isEditing ? 'Update Product' : 'Add Product'}
         </button>
@@ -86,6 +90,7 @@ const ProductList = () => {
             <th className="border border-gray-300 px-4 py-2">Product Category</th>
             <th className="border border-gray-300 px-4 py-2">Product Freshness</th>
             <th className="border border-gray-300 px-4 py-2">Product Price</th>
+            <th className="border border-gray-300 px-4 py-2">Image</th>
             <th className="border border-gray-300 px-4 py-2">Action</th>
           </tr>
         </thead>
@@ -93,10 +98,11 @@ const ProductList = () => {
           {state.products.map((product) => (
             <tr key={product.id} className="hover:bg-gray-50">
               <td className="border border-gray-300 px-4 py-2">{product.id}</td>
-              <td className="border border-gray-300 px-4 py-2">{product.name}</td>
-              <td className="border border-gray-300 px-4 py-2">{product.category}</td>
-              <td className="border border-gray-300 px-4 py-2">{product.freshness}</td>
-              <td className="border border-gray-300 px-4 py-2">${product.price}</td>
+              <td className="border border-gray-300 px-4 py-2">{product.productName}</td>
+              <td className="border border-gray-300 px-4 py-2">{product.productCategory}</td>
+              <td className="border border-gray-300 px-4 py-2">{product.productFreshness}</td>
+              <td className="border border-gray-300 px-4 py-2">${product.productPrice}</td>
+              <td className="border border-gray-300 px-4 py-2">{product.image}</td>
               <td className="border border-gray-300 px-4 py-2">
                 <button className="bg-red-500 text-white px-3 py-1 mr-2 rounded hover:bg-red-700 transition duration-300"
                         onClick={() => dispatch({ type: 'DELETE_PRODUCT', payload: product.id })}>

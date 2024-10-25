@@ -3,34 +3,13 @@ import { create } from 'zustand';
 const useProductStore = create((set) => ({
     products: [
         {
-            id: "1,001",
-            name: 'Lorem',
-            category: 'ipsum',
-            price: 1,
-            freshness: 'Brand New',
-            description: 'adipisicing',
-        },
-        {
-            id: "1,002",
-            name: 'Lorem',
-            category: 'ipsum',
-            price: 9,
-            freshness: 'Second Hand',
-            description: 'adipisicing',
-        },
-        {   id: "1,003",
-            name: 'Lorem', 
-            category: 'ipsum', 
-            price: 20, 
-            freshness: 'Brand New', 
-            description: 'adipisicing' 
-        },
-        {   id: "1,004", 
-            name: 'Lorem', 
-            category: 'ipsum', 
-            price: 9, 
-            freshness: 'Refused', 
-            description: 'adipisicing' 
+            id: "e7ce2b97-d0c1-4a75-9c1d-e6dfc8441836",
+            productName: "John",
+            productCategory: "Doe",
+            productFreshness: "Doe",
+            productPrice: "Doe",
+            image: "Doe",
+            additionalDescription: "Doe",
         },
     ],
     deleteProduct: (id) => set((state) => ({
