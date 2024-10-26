@@ -11,7 +11,6 @@ const CreateProduct = () => {
   const validateForm = () => {
     const newErrors = {};
    
-  
     if (!productName) {
       newErrors.productName = "Product name is required.";
     }

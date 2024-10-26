@@ -1,16 +1,17 @@
 # React_Monicha-Ailsa-Neha-Utomo
 
-React Testing :
+# React Testing
 
-Testing adalah proses memverifikasi bahwa test assertions kita benar dan bahwa code kita tetap benar sepanjang masa aplikasi. Test assertion adalah ekspresi boolean yang mengembalikan nilai true kecuali ada bug di kode kita.
+## Apa itu Testing?
+Testing adalah cara untuk memastikan bahwa semua yang kita harapkan dari aplikasi kita benar-benar terjadi. Intinya, kita bikin pernyataan (test assertions) yang seharusnya selalu `true`, kecuali ada bug di dalam kode kita.
 
-Manfaat testing : Ketika aplikasi mempunyai coverage yang baik, ketika ada bagian lain yang broken, akan mudah untuk diketahui. Mengurangi bug pada aplikasi.
+## Kenapa Testing Penting?
+Testing yang baik bikin kita lebih mudah mendeteksi masalah ketika ada bagian lain yang bermasalah, jadi kita bisa mengurangi bug. Kategori testing yang umum dipakai ada dua:
 
-Kategori Testing : 1. Rendering component trees. 2. Menjalankan aplikasi lengkap. 
+- **Melihat bagaimana komponen ditampilkan** (rendering component trees)
+- **Menguji aplikasi secara keseluruhan**
 
-Rekomendasi Tools : Jest
+## Tools yang Direkomendasikan
+Untuk testing di React, tools yang bisa kamu coba adalah **Jest** dan **React Testing Library**. Keduanya bikin kita gampang untuk mengetes komponen tanpa harus ribet sama detail implementasinya. Kalau kamu juga mau testing custom hooks, ada **React Hooks Testing Library** yang bisa dipakai.
 
-React Testing Library: Merupakan seperangkat helpers yang memungkinkan kita mengetes komponen pada React tanpa bergantung pada detail implementasinya.
-
-Library yang digunakan testing custom hook menggunakan React Hooks Testing Library
 
