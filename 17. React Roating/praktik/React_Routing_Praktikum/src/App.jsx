@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
 
-
 const App = () => {
   return (
     <Router>
