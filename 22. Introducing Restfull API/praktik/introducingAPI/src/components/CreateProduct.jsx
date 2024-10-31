@@ -8,10 +8,6 @@ const CreateProduct = () => {
   const [productPrice, setProductPrice] = useState("");
   const [message, setMessage] = useState("");
 
-  const showModal = () => {
-    alert("Product created!");
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,7 +24,7 @@ const CreateProduct = () => {
         newProduct
       );
       setMessage("Product created successfully!");
-      showModal();
+      alert("Product created!");
 
       setProductName("");
       setProductCategory("");
