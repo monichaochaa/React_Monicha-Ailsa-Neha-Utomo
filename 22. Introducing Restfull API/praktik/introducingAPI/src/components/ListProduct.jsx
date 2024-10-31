@@ -17,7 +17,7 @@ const ListProduct = () => {
 
       const updateProduct = async (product) => {
         try {
-          const response = await axios.put(
+          await axios.put(
             `https://67204f1ae7a5792f05310cd2.mockapi.io/products/${product.id}`,
             product
           );
@@ -48,6 +48,8 @@ const ListProduct = () => {
       return (
         <div className="container mx-auto mt-10 px-4">
           <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">List Product</h1>
+          {message && <p className="text-green-600 mb-4">{message}</p>}
+
           <table className="table-auto w-full bg-white shadow-md rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -68,8 +70,8 @@ const ListProduct = () => {
                   <td className="py-3 px-6 text-left">{product.freshness}</td>
                   <td className="py-3 px-6 text-left">{product.price}</td>
                   <td className="py-3 px-6 text-center">
-                    <button className="bg-red-500 text-white py-1 px-3 rounded-md mr-2">Delete</button>
-                    <button className="bg-green-500 text-white py-1 px-3 rounded-md">Edit</button>
+                    <button onClick={() => deleteProduct(product.id)} className="bg-red-500 text-white py-1 px-3 rounded-md mr-2">Delete</button>
+                    <button onClick={() => setEditingProduct(product)} className="bg-green-500 text-white py-1 px-3 rounded-md">Edit</button>
                   </td>
                 </tr>
               ))}
@@ -82,42 +84,62 @@ const ListProduct = () => {
             e.preventDefault();
             updateProduct(editingProduct);
           }}
-        >
-          <input
-            type="text"
-            value={editingProduct.name}
-            onChange={(e) =>
-              setEditingProduct({ ...editingProduct, name: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            value={editingProduct.category}
-            onChange={(e) =>
-              setEditingProduct({ ...editingProduct, category: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            value={editingProduct.freshness}
-            onChange={(e) =>
-              setEditingProduct({ ...editingProduct, freshness: e.target.value })
-            }
-          />
-          <input
-            type="number"
-            value={editingProduct.price}
-            onChange={(e) =>
-              setEditingProduct({ ...editingProduct, price: e.target.value })
-            }
-          />
-          <button type="submit">Save</button>
-          <button type="button" onClick={() => setEditingProduct(null)}>Cancel</button>
-        </form>
-      )}  
-
-       </div>
-      );
-    };    
-
-export default ListProduct;
+          className="mt-6 p-4 bg-gray-100 rounded-lg"
+          >
+            <h2 className="text-2xl font-semibold mb-4">Edit Product</h2>
+            <input
+              type="text"
+              value={editingProduct.name}
+              onChange={(e) =>
+                setEditingProduct({ ...editingProduct, name: e.target.value })
+              }
+              placeholder="Product Name"
+              className="border p-2 rounded-md w-full mb-2"
+            />
+            <input
+              type="text"
+              value={editingProduct.category}
+              onChange={(e) =>
+                setEditingProduct({ ...editingProduct, category: e.target.value })
+              }
+              placeholder="Product Category"
+              className="border p-2 rounded-md w-full mb-2"
+            />
+            <input
+              type="text"
+              value={editingProduct.freshness}
+              onChange={(e) =>
+                setEditingProduct({ ...editingProduct, freshness: e.target.value })
+              }
+              placeholder="Product Freshness"
+              className="border p-2 rounded-md w-full mb-2"
+            />
+            <input
+              type="number"
+              value={editingProduct.price}
+              onChange={(e) =>
+                setEditingProduct({ ...editingProduct, price: e.target.value })
+              }
+              placeholder="Product Price"
+              className="border p-2 rounded-md w-full mb-2"
+            />
+            <button
+              type="submit"
+              className="bg-blue-500 text-white py-1 px-4 rounded-md mr-2"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              onClick={() => setEditingProduct(null)}
+              className="bg-gray-500 text-white py-1 px-4 rounded-md"
+            >
+              Cancel
+            </button>
+          </form>
+        )}
+      </div>
+    );
+  };
+  
+  export default ListProduct;
