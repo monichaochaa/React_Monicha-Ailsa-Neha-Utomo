@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import CreateProduct from "./components/createProduct";
-import ListProduct from "./components/ListProduct";
+//import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+//import CreateProduct from "./components/createProduct";
+//import ListProduct from "./components/ListProduct";
+import Login from "./components/Login";
 
-const App = () => {
+/* const App = () => {
   return (
     <Router>
     <div className="App">
@@ -31,6 +32,23 @@ const App = () => {
     </div>
   </Router>
 );
+};*/
+
+const App = () => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+  return (
+    <div>
+      {isLoggedIn ? (
+        <div>
+          <h1>Welcome, User!</h1>
+          <p>You are successfully logged in.</p>
+        </div>
+      ) : (
+        <Login />
+      )}
+    </div>
+  );
 };
 
-export default App;
+export default App; 
