@@ -1,12 +1,12 @@
 import React from 'react';
-import ChatComponent from './components/ChatComponent';
+import Chat from './components/Chat';
 
-function App() {
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <ChatComponent />
+    <div className="App">
+      <Chat />
     </div>
   );
-}
+};
 
 export default App;
