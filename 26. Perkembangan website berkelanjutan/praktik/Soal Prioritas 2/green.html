@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Non-Green Web Page</title>
     <style>
-        /* Warna cerah yang mengonsumsi lebih banyak energi pada layar */
+        /* Warna lebih lembut untuk mengurangi konsumsi energi */
         body {
             font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
-            color: #000000;
+            background-color: #F0F0F0; /* Warna abu-abu terang */
+            color: #333; /* Warna teks gelap */
         }
         header, footer {
-            background-color: #00FFFF; /* Warna cerah (cyan) */
+            background-color:#E0E0E0; /* Warna abu-abu lembut */
             padding: 20px;
             text-align: center;
         }
         main {
             padding: 20px;
-            background: #FFFF00; /* Warna cerah (kuning) */
+            background: #FFFFFF; /* Latar belakang putih untuk kontras yang baik */
         }
         .high-res-background {
             width: 100%;
@@ -34,6 +34,16 @@
         .link-list li {
             margin-bottom: 10px;
         }
+           
+        @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+        header, footer {
+            background-color: #1E1E1E;
+        }
+    }
     </style>
 </head>
 <body>
@@ -41,17 +51,14 @@
         <h1>Welcome to My Non-Green Web Page</h1>
     </header>
 
-    <!-- Video beresolusi tinggi sebagai background yang menguras energi -->
-    <video autoplay loop muted class="high-res-background">
-        <source src="forest.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+   <!-- Optimasi: Menggunakan gambar statis alih-alih video beresolusi tinggi -->
+   <img src="optimized-forest.jpg" alt="Optimized Forest Background" class="optimized-background">
 
     <main>
         <section class="content">
             <h2>About Me</h2>
-            <!-- Gambar resolusi tinggi dengan ukuran besar tanpa optimasi -->
-            <img src="https://via.placeholder.com/4000x3000" alt="High-Resolution Image">
+             <!-- Optimasi gambar dengan format lebih ringan dan lazy-loading -->
+             <img src="https://via.placeholder.com/800x600.webp" alt="Optimized Image" loading="lazy">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex.</p>
         </section>
         <section class="content">
